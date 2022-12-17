@@ -16,6 +16,12 @@ class Penerbit extends Base_Controller {
     //nama model
     var $context = 'penerbit';
 
+    function __construct() {
+        parent::__construct();
+        if(!$this->ion_auth->logged_in()) {
+            redirect('auth/login');
+        }
+    }
     function form(){
         $id = $this->uri->segment(3);
         if($id){

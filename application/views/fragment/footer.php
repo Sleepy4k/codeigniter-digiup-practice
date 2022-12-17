@@ -1,5 +1,9 @@
-<footer>
-    <small><i>Copyright &copy; 2022</i></small>
+</div>
+<footer class="bg-light text-center text-lg-start">
+    <div class="text-center p-3" style="background color: rgba(0, 0, 0, 0.1);">
+        Copyright &copy;
+        <a href="https://mywebsite.cm/" class="text-dark">mywebsite.com </</a>
+    </div>
 </footer>
 </body>
 </html>

@@ -58,7 +58,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('database');
+$autoload['libraries'] = array('database','form_validation','pagination','session','ion_auth');
 /*
 | -------------------------------------------------------------------
 |  Auto-load Drivers

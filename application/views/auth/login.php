@@ -1,28 +1,36 @@
-<h1><?php echo lang('login_heading');?></h1>
-<p><?php echo lang('login_subheading');?></p>
+<?php 
+include APPPATH . 'views/fragment/header.php';
+include APPPATH . 'views/fragment/menu.php'
+?>
+<div class="col-sm-12 d-flex justify-content-center align-items-center">
+  <div class="col-lg-4 col-sm-6 mt-5">
+    <div class="card p-3 bg-white mt-5">
+      <h1 class="text-center mb-4"><?php echo lang('login_heading');?></h1>
+      
+      <div id="infoMessage" class="text-danger"><?php echo $message;?></div>
+      
+      <?php echo form_open("auth/login");?>
+      
+        <p>
+          <?php echo lang('login_identity_label', 'identity');?>
+          <div>
+            <input class="form-control" placeholder="Silahkan masukkan email anda" type="email" name="identity" id="identity">
+          </div>
+        </p>
+      
+        <p>
+          <?php echo lang('login_password_label', 'password');?>
+          <div>
+          <input class="form-control" placeholder="Silahkan masukkan password anda"  type="password" name="password" id="password">
+          </div>
+        </p>
+  
+        <button type="submit" class="btn btn-primary col-sm-12 mt-2 mb-2">Login</button>
+   
+      
+      <?php echo form_close();?>
+    
+    </div>
+  </div>
+</div>
 
-<div id="infoMessage"><?php echo $message;?></div>
-
-<?php echo form_open("auth/login");?>
-
-  <p>
-    <?php echo lang('login_identity_label', 'identity');?>
-    <?php echo form_input($identity);?>
-  </p>
-
-  <p>
-    <?php echo lang('login_password_label', 'password');?>
-    <?php echo form_input($password);?>
-  </p>
-
-  <p>
-    <?php echo lang('login_remember_label', 'remember');?>
-    <?php echo form_checkbox('remember', '1', FALSE, 'id="remember"');?>
-  </p>
-
-
-  <p><?php echo form_submit('submit', lang('login_submit_btn'));?></p>
-
-<?php echo form_close();?>
-
-<p><a href="forgot_password"><?php echo lang('login_forgot_password');?></a></p>
